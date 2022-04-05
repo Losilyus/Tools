@@ -1,3 +1,5 @@
-import module.scraping as parser
+import module.show as show
 
-path = r"/home/fahrettin/.ssh/configs"
+path = "/home/fahrettin/.ssh/configs"
+
+show.show(path)
