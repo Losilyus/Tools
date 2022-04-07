@@ -1,1 +1,0 @@
-path = "/home/fahrettin/.ssh/configs"
