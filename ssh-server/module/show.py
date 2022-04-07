@@ -1,4 +1,7 @@
-import scraping as parser
+import module.scraping as parser
+import module.command as c
+import module.edit as edit
+import module.details as details
 
 from tabulate import tabulate
 import os
@@ -18,10 +21,6 @@ textMenu = colored("""
     T=) Edit
     """, "red", attrs=["bold"])
     
-
-def command(hostname, user): return os.system(f"ssh {user}@{hostname}")
-
-
 def show(path):
 
     data = parser.parser(path)
@@ -53,22 +52,21 @@ def show(path):
         cprint(numberStyle + steakStyle, "cyan", attrs=["bold"])
 
     cprint(textMenu, "white", attrs=["bold"])
-    tost = "github.com"
    
     get = repr(input("\nSelect Server > "))
     if get == "'e'" or get == "'E'" or get == "'exit'" or get == "'EXIT'":
         sys.exit()
     elif get == "'d'" or get == "'D'":
-        os.system("cls")
-        # details(keyDict)
+        os.system("clear")
+        details.details(keyDict, path)
     elif get == num: 
-        command(keyDict[str(get)]["host_name"], keyDict[str(get)]["user"])
+        c.command(keyDict[str(get)]["host_name"], keyDict[str(get)]["user"])
     elif get == "'t'" or get == "'T'":
-        os.system("cls")
-        #editData(keyDict)
+        os.system("clear")
+        edit.editData(keyDict, path)
     else:
         try:
-            command(keyDict[str(get)]["host_name"], keyDict[str(get)]["user"])
+           c.command(keyDict[str(get)]["host_name"], keyDict[str(get)]["user"])
         except:
             err = colored("Err: ", "red", attrs=["bold"])
             cprint(err + "You made a wrong keystroke...", "white", attrs=["bold"])

@@ -1,13 +1,4 @@
-from dataclasses import replace
-from email import charset
-from email.mime import base
-import os
 from re import S
-import sys
-from tabulate import tabulate
-from termcolor import colored, cprint
-
-
 
 def parser(path):
     all = ""
