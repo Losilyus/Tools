@@ -1,2 +1,3 @@
 # Tools
-Linux &amp; Windows'da işinize yarayabilecek araçlar
+Tools that can be useful to tools on Linux & Windows
+
