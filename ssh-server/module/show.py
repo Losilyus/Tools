@@ -6,7 +6,6 @@ import module.details as details
 from tabulate import tabulate
 import os
 from termcolor import colored, cprint
-from tabulate import tabulate
 import sys
 
 textStart = colored("""
